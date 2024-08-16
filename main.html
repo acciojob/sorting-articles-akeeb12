@@ -1,46 +1,57 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorted Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* You can add a background image if needed */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        ul#band {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul#band li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<h1>Sorted Articles</h1>
-	<ul id ="bands"></ul>
-	<script>
-		const bands = ['The Plot in You', 
-					   'The Devil Wears Prada',
-					   'Pierce the Veil',
-					   'Norma Jean',
-					   'The Bled', 
-					   'Say Anything',
-					   'The Midway State',
-					   'We Came as Romans',
-					   'Counterparts', 
-					   'Oh, Sleeper',
-					   'A Skylit Drive',
-					   'Anywhere But Here',
-					   'An Old Dog'
-					  ];
-	function strip(bandName) {
-		return bandName.replace(/^(a |an |the )/i, ''). trim();
-		
-	}
-		const sortedBands = bands.sort((a, b) => strip(a). localeCompare(strip(b)));
+    <div class="container">
+        <ul id="band"></ul>
+    </div>
 
-		const bandList.forEach(bands =>
-			{
-				const li = documnet.createElement('li');
-				li.textContent = band;
-				bandList.appendChild(li);
-			});
-		
-    <script type="text/javascript" src="./script.js">
-</script>
-</script>
+    <script>
+        const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+        function strip(bandName) {
+            return bandName.replace(/^(a |an |the )/i, '').trim();
+        }
+
+        const sortedBands = bands.sort((a, b) => strip(a).localeCompare(strip(b)));
+
+        const bandList = document.getElementById('band');
+        sortedBands.forEach(band => {
+            const li = document.createElement('li');
+            li.textContent = band;
+            bandList.appendChild(li);
+        });
+    </script>
 </body>
-
 </html>
