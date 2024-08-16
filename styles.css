@@ -1,1 +1,17 @@
 /*  your css code here. If applicable */
+body
+{
+	font-family:Arial;
+	
+}
+#band
+{
+	list-style-type:none;
+	padding:0;
+}
+#band
+{
+	margin: 5px 0;
+}
+
+
